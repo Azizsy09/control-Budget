@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Définition des groupes -->
+        <record id="group_control_gestion_utilisateur" model="res.groups">
+            <field name="name">Contrôle Gestion/Utilisateur</field>
+            
+            <field name="comment">Groupe pour la gestion du contrôle budgétaire (utilisateur).</field>
+        </record>
+
+        <record id="group_control_gestion_directeur" model="res.groups">
+            <field name="name">Contrôle Gestion/Directeur</field>
+            
+            <field name="comment">Groupe pour la gestion du contrôle budgétaire (directeur).</field>
+        </record>
+
+        <record id="group_control_gestion_lecteur" model="res.groups">
+            <field name="name">Contrôle Gestion/lecteur</field>
+            
+            <field name="comment">Groupe pour la gestion du contrôle budgétaire (comptabilité).</field>
+        </record>
+         <record id="group_control_gestion_admininistrateur" model="res.groups">
+            <field name="name">Contrôle Gestion/Admin</field>
+            
+            <field name="comment">Groupe pour la gestion du contrôle budgétaire (administrateur).</field>
+        </record>
+    </data>
+</odoo>

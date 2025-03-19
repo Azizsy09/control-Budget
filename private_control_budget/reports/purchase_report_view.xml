@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_purchase_order_pivot_inherit">
+            <field name="name">product.month.pivot.inherit</field>
+            <field name="model">purchase.report</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_pivot"/>
+            <field name="arch" type="xml">
+                <field name="price_total" position="after">
+                    <field name="manager_valitation_time" type="measure"/>
+                    <field name="dept_manager_valitation_time" type="measure"/>
+                    <field name="finance_manager_valitation_time" type="measure"/>
+                    <field name="director_manager_valitation_time" type="measure"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_purchase_order_graph_inherit">
+            <field name="name">product.month.graph.inherit</field>
+            <field name="model">purchase.report</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_graph"/>
+            <field name="arch" type="xml">
+                <field name="untaxed_total" position="after">
+                    <field name="manager_valitation_time" type="measure"/>
+                    <field name="dept_manager_valitation_time" type="measure"/>
+                    <field name="finance_manager_valitation_time" type="measure"/>
+                    <field name="director_manager_valitation_time" type="measure"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

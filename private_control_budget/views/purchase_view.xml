@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="purchase_order_form_inherit12" model="ir.ui.view">
+      <field name="name">purchase.order.form.inherit</field>
+      <field name="model">purchase.order</field>
+      <field name="inherit_id" ref="purchase.purchase_order_form"/>
+      <field name="arch" type="xml">
+          <!-- <xpath expr="//form/header" position="inside">
+            <div class="alert alert-info text-center o_form_header"  role="alert">
+                <div class="text-danger">
+                  <strong class="text-danger">
+                     Attention : Le budget disponible est insuffisant !
+                  </strong>
+                </div>
+            </div>
+          </xpath> -->
+              <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='analytic_distribution']" position="before">
+                <field name="account_id"/>
+              </xpath>
+              <!-- <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='account_analytic_id']" position="after">
+                <field name="planned" invisible="1"/>
+                <field name="available" invisible="1"/>
+              </xpath> -->
+              <xpath expr="//form/sheet/notebook" position="inside">
+                <page string="Budgets">
+                  <field name="crossovered_budget_line" widget="one2many_list" colspan="4" nolabel="1" mode="tree">
+                    <tree string="Budget Items" editable="top">
+                      <field name="crossovered_budget_id"/>
+                      <field name="general_budget_id"/>
+                      <field name="analytic_account_id"/>
+                      <field name="date_from"/>
+                      <field name="date_to"/>
+                      <field name="paid_date"/>
+                      <field name="planned_amount" widget="monetary"/>
+                       <field name="engage_amount" sum="Montant Engage" widget="monetary"/>
+                      <!-- <field name="theoritical_amount" sum="Practical Amount" widget="monetary" invisible="1"/> -->
+                      <field name="available_amount" sum="Theoritical Amount" widget="monetary" />
+                      
+                    </tree>
+                    <form string="Budget Items">
+                      <field name="crossovered_budget_id"/>
+                      <field name="general_budget_id"/>
+                      <field name="date_from"/>
+                      <field name="date_to"/>
+                      
+                      <field name="planned_amount" widget="monetary"/>
+                    </form>
+                  </field>
+                </page>
+                
+              </xpath>
+              
+              <xpath expr="//button[@name='button_approve']" position="attributes">
+                <attribute name="groups">private_control_budget.group_department_manager</attribute>
+              </xpath>
+            </field>
+          </record>
+
+
+        </data>
+      </odoo>
