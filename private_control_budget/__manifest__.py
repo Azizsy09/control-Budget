@@ -1,7 +1,7 @@
 # Migrate v14 by Optesis-CTD
 {
     'name': 'optesis_account_bugdet_control ',
-    'author': 'OPTESIS SA',
+    
     'version': '17.0',
     'category': 'Tools',
     'description': """
